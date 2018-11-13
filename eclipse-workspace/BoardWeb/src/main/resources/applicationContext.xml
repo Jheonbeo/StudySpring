@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean id="tv" class="SamsungTV"/>
+<!-- 즉시 로딩 방식 : 구동되는 시점에 bean 객체 생성 -->
+	<!-- init과 destroy로 bean객체의 생명주기 알기 쉽다. -->
+	<bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="singleton"/>
 </beans>
