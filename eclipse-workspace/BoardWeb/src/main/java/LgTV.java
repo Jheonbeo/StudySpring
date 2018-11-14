@@ -1,4 +1,3 @@
-import springinf.TV;
 
 public class LgTV  implements TV{
 	public void powerOn() {

@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!-- 즉시 로딩 방식 : 구동되는 시점에 bean 객체 생성 -->
 	<!-- init과 destroy로 bean객체의 생명주기 알기 쉽다. -->
-	<!-- 생성자 주입방식 -->
-	<!-- 
-	<bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="singleton">
-		<constructor-arg ref="apple"></constructor-arg>
-		<constructor-arg value="300000"></constructor-arg>
-	</bean>
-	 -->
-	<!-- Setter 주입방식(1)
-	<bean id="tv" class="SamsungTV">
-		<property name="speaker" ref="apple"></property>
-		<property name="price" value="300000"></property>
-	</bean>
-	 -->
-	<!-- Setter 주입방식(2) -->
-	<bean id="tv" class="SamsungTV" p:speaker-ref="sony" p:price="300000"/>
-	<bean id="sony" class="SonySpeaker"/>
-	<bean id="apple" class="AppleSpeaker"/>
+	<bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="singleton"/>
 </beans>
