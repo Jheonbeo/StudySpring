@@ -1,4 +1,4 @@
-package springinf;
+package polymorphism;
 
 public interface Speaker {
 
