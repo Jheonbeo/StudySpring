@@ -1,8 +1,14 @@
 package polymorphism;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import polymorphism.Speaker;
 import polymorphism.TV;
 
+@Component("samTV")	//bean대신 어노테이션 설정으로 주입
 public class SamsungTV implements TV{
+	@Autowired	//객체를 변수에 주입
 	private Speaker speaker;
 	private int price;
 	

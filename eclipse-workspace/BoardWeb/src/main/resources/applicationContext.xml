@@ -2,8 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 <!-- 즉시 로딩 방식 : 구동되는 시점에 bean 객체 생성 -->
+	<context:component-scan base-package="polymorphism"/>
+	<bean id="apple" class="polymorphism.AppleSpeaker"/>
 	<!-- init과 destroy로 bean객체의 생명주기 알기 쉽다. -->
 	<!-- 생성자 주입방식 
 	<bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="singleton">
@@ -31,4 +35,20 @@
 			</list>
 		</property>
 	</bean>
+	<!-- 
+	<bean id="collectionBean2" class="com.springbook.ioc.injection.CollectionBean">
+		<property name="addressList">
+			<map>
+				<entry>
+					<key><value>고길동</value></key>
+					<value>서울시 강남구 역삼동</value>
+				</entry>
+				<entry>
+					<key><value>마이콜</value></key>
+					<value>서울시 성동구 행당동</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	 -->
 </beans>
